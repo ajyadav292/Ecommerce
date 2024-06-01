@@ -71,7 +71,11 @@ app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
 
 // Run Server
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || app.use(cors({
+  origin:["https://ecommerce-biwf.vercel.app/"],
+  methods:["POST","GET"],
+  credentials:true
+}));
 app.listen(PORT, () => {
   console.log("Server is running on ", PORT);
 });
