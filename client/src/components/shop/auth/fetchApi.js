@@ -12,7 +12,9 @@ export const isAdmin = () =>
 export const loginReq = async ({ email, password }) => {
   const data = { email, password };
   try {
-    let res = await axios.post(`${apiURL}/api/signin`, data);
+    let res = await axios.post(`${apiURL}/api/signin`, data,{
+      timeout: 30000,
+     });
     return res.data;
   } catch (error) {
     console.log(error);
