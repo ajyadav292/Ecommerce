@@ -76,11 +76,3 @@ app.listen(PORT, () => {
   console.log("Server is running on ", PORT);
 });
 
-app.use(cors({
-  origin:["https://ecommerce-biwf.vercel.app/"],
-  methods:["POST","GET"],
-  credentials:true
-}))
-app.get("/", (req,res)=>{
-  res.json("hello")
-})
